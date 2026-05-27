@@ -1,11 +1,19 @@
-# Cyber Armory Portfolio
+﻿# Cyber Armory Portfolio
 
-> Private Flask-based security operations platform prototype  
-> 공개용 포트폴리오 저장소입니다. 실제 구현 소스코드는 비공개 저장소에 보관합니다.
+> Documentation-only public portfolio for a private security operations platform prototype.  
+> The implementation repository is intentionally private because the project may be commercialized later.
+
+![Status](https://img.shields.io/badge/status-public--portfolio-blue)
+![Source](https://img.shields.io/badge/source-private-lightgrey)
+![Dependabot](https://img.shields.io/badge/Dependabot-0%20Open-brightgreen)
+![Release Gate](https://img.shields.io/badge/Final%20Release%20Gate-PASS-brightgreen)
+![Tests](https://img.shields.io/badge/pytest-189%20passed-brightgreen)
 
 ## Overview
 
-Cyber Armory is a private security operations platform prototype built around:
+Cyber Armory is a private Flask-based security operations platform prototype focused on disciplined security engineering, release validation, and operational readiness.
+
+The private implementation includes:
 
 - authentication and administrator management
 - execution dashboard
@@ -16,43 +24,78 @@ Cyber Armory is a private security operations platform prototype built around:
 - Docker/Kubernetes deployment readiness
 - operational runbooks and validation workflows
 
-This repository intentionally contains **documentation only**.  
-The full source code is not published because the project may be commercialized later.
+This public repository contains **documentation only**.  
+It does not include source code, internal execution logic, deployment secrets, or production infrastructure details.
 
-## Validation Summary
+## Final Private Baseline
 
 | Item | Result |
 |---|---|
-| Final version | `v0.33.0` |
-| Final commit | `ca4ee2a` |
+| Private implementation repository | `Cyber-Armory` |
+| Public portfolio repository | `Cyber-Armory-Portfolio` |
+| Final private version | `v0.33.0` |
+| Final private commit | `ca4ee2a` |
 | Final Release Gate | PASS |
 | Test result | 189 passed / 14 skipped / 1 warning |
 | Dependabot alerts | 0 Open |
 | Default branch | main |
 | Runtime artifacts | Excluded |
-| Secrets scan review | Completed manually |
+| Public source disclosure | No source code included |
 
 ## Security Work Completed
 
-- Removed runtime artifacts from release tree
-- Excluded local data, logs, uploads, database files, and backup files
+- Removed runtime artifacts from the release tree
+- Excluded local data, logs, uploads, database files, backup files, and virtual environments
 - Patched vulnerable dependencies reported by Dependabot
 - Added top-level dependency security floors for Dependabot visibility
 - Patched Gunicorn request smuggling advisories
-- Validated release using automated release gate
-- Verified test suite after dependency upgrades
+- Validated release using an automated final release gate
+- Verified the test suite after dependency upgrades
+- Kept the implementation repository private to preserve future commercialization options
+
+## Architecture Summary
+
+| Area | Description |
+|---|---|
+| Authentication | Login, password policy, session handling, and 2FA-related hardening |
+| Admin Management | User and role management |
+| Execution Dashboard | Controlled operational workflow interface |
+| File Management | Upload, listing, and validation workflows |
+| Security Settings | API key, 2FA, password policy, and preference security |
+| Release Gate | Automated checks for release safety |
+| Deployment Readiness | Docker and Kubernetes preflight validation |
+| Documentation | Runbooks, checklists, release notes, and handoff materials |
 
 ## Disclosure Boundary
 
-The public version only describes the project at a high level.  
-It does not include:
+This public repository intentionally excludes:
 
-- source code
+- full source code
 - real deployment configuration
-- credentials or secrets
+- `.env` files
+- credentials, tokens, API keys, or passwords
 - internal execution logic
 - production infrastructure details
 - exploit implementation details
+- runtime data, logs, uploads, and backups
+
+## Suggested Screenshots
+
+Screenshots may be added later after sanitization:
+
+- dashboard overview
+- user/admin management page
+- Final Release Gate PASS terminal output
+- pytest result
+- Dependabot 0 Open screen
+
+Before publishing screenshots, remove or blur:
+
+- usernames and emails
+- internal IP addresses
+- private domains
+- file paths that reveal personal information
+- tokens, API keys, session values, and secrets
 
 ## Intended Use
 
@@ -60,27 +103,15 @@ This project is intended for authorized security testing, training, and defensiv
 
 Do not use security tools or related techniques against systems you do not own or do not have explicit permission to test.
 
-## Repository Structure
+## Why the Source Code Is Private
 
-```text
-Cyber-Armory-Portfolio/
-├─ README.md
-├─ architecture.md
-├─ security-validation-summary.md
-├─ release-summary.md
-├─ public-disclosure-policy.md
-├─ screenshots/
-└─ .gitignore
-```
+The implementation may become a commercial product.  
+Keeping the source private protects:
 
-## Suggested Screenshots
+- product architecture
+- execution workflow design
+- security hardening implementation
+- deployment strategy
+- future commercialization options
 
-Add sanitized screenshots only:
-
-- dashboard overview
-- user/admin management page
-- release gate PASS terminal output
-- Dependabot 0 Open screen
-- test result screen
-
-Do not include screenshots showing credentials, internal IPs, private domains, real users, or operational secrets.
+This portfolio repository demonstrates the engineering process and validation discipline without exposing the implementation.
