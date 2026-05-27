@@ -1,0 +1,19 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Runtime / secrets
+.env
+.env.*
+*.db
+*.sqlite
+*.sqlite3
+logs/
+data/
+uploads/
+backups/
+
+# Screenshots that may need review first
+screenshots/raw/
