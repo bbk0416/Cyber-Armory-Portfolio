@@ -133,3 +133,9 @@ Keeping the source private protects:
 
 This portfolio repository demonstrates the engineering process and validation discipline without exposing the implementation.
 
+
+## Private Implementation Baseline
+
+The private implementation repository has been archived as 0.34.0-hardened, with release safety scan, Docker runtime preflight, and Python compile validation completed.
+
+비공개 구현 레포는 0.34.0-hardened 기준선으로 정리했으며, Release safety scan, Docker runtime preflight, Python compile validation을 통과했습니다.
