@@ -79,6 +79,23 @@ This public repository intentionally excludes:
 - exploit implementation details
 - runtime data, logs, uploads, and backups
 
+
+## Visual Portfolio
+
+These visuals are sanitized public mockups. They summarize validation and architecture outcomes without exposing private source code or operational details.
+
+| Validation | Dependency Security |
+|---|---|
+| ![Validation Summary](screenshots/01-validation-summary.svg) | ![Dependabot 0 Open](screenshots/02-dependabot-zero-open.svg) |
+
+| Release Gate | Test Result |
+|---|---|
+| ![Final Release Gate PASS](screenshots/03-release-gate-pass.svg) | ![pytest result](screenshots/04-test-result.svg) |
+
+| Architecture Overview |
+|---|
+| ![Architecture Overview](screenshots/05-architecture-overview.svg) |
+
 ## Suggested Screenshots
 
 Screenshots may be added later after sanitization:
@@ -115,3 +132,4 @@ Keeping the source private protects:
 - future commercialization options
 
 This portfolio repository demonstrates the engineering process and validation discipline without exposing the implementation.
+
