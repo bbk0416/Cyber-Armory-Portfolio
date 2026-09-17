@@ -1,93 +1,86 @@
-# Cyber Armory Portfolio
+# Cyber Armory
 
-> Documentation-only public portfolio for a private security operations platform prototype.  
-> The implementation repository is intentionally private because the project may be commercialized later.
-## Portfolio position
+이 저장소는 비공개로 개발한 보안운영 플랫폼 프로토타입의 **공개 설명용 저장소**입니다. 소스코드는 공개하지 않고, 어떤 부분을 만들고 어떻게 검증했는지만 정리했습니다.
 
-This repository is **supporting evidence, not the primary career portfolio**. The current public entry point is [BBK Security Portfolio](https://bbk0416.github.io/bbk-security-portfolio/), which prioritizes VulnFlow, KillWeb, BreachScope, and VulnSignal for Vulnerability Management / Security Engineer roles.
+대표 포트폴리오는 [BBK Security Portfolio](https://bbk0416.github.io/bbk-security-portfolio/)입니다. Cyber Armory는 그중에서도 **보안 하드닝, 릴리스 점검, 배포 전 검증 경험을 보여주는 보조 자료**로 두고 있습니다.
 
-Cyber Armory remains useful as evidence of release hardening and security-engineering discipline, but it should not be interpreted as customer validation, production adoption, or a separate commercial product launch.
+실제 고객이 사용한 제품이나 운영 중인 상용 서비스로 소개하지 않습니다.
 
-![Status](https://img.shields.io/badge/status-public--portfolio-blue)
+![Status](https://img.shields.io/badge/status-supporting--portfolio-blue)
 ![Source](https://img.shields.io/badge/source-private-lightgrey)
 ![Dependabot](https://img.shields.io/badge/Dependabot-0%20Open-brightgreen)
 ![Release Gate](https://img.shields.io/badge/Final%20Release%20Gate-PASS-brightgreen)
 ![Tests](https://img.shields.io/badge/pytest-189%20passed-brightgreen)
 
-## Overview
+## 어떤 프로젝트였나
 
-Cyber Armory is a private Flask-based security operations platform prototype focused on disciplined security engineering, release validation, and operational readiness.
+Flask 기반의 보안운영 플랫폼 프로토타입을 만들면서 다음 영역을 다뤘습니다.
 
-The private implementation includes:
+- 로그인, 관리자 계정, 권한 관리
+- 실행 대시보드와 파일 관리
+- 보안 설정과 하드닝
+- 취약 의존성 정리
+- 릴리스 전 자동 점검
+- Docker/Kubernetes 배포 전 확인
+- 운영 절차와 점검 문서 정리
 
-- authentication and administrator management
-- execution dashboard
-- file management
-- security hardening
-- release safety gate
-- dependency vulnerability remediation
-- Docker/Kubernetes deployment readiness
-- operational runbooks and validation workflows
+공개 저장소에는 내부 실행 로직, 실제 배포 설정, 비밀정보와 운영 데이터는 넣지 않았습니다.
 
-This public repository contains **documentation only**.  
-It does not include source code, internal execution logic, deployment secrets, or production infrastructure details.
+## 마지막 비공개 기준선
 
-## Final Private Baseline
-
-| Item | Result |
+| 항목 | 결과 |
 |---|---|
-| Private implementation repository | `Cyber-Armory` |
-| Public portfolio repository | `Cyber-Armory-Portfolio` |
-| Final private version | `v0.33.0` |
-| Final private commit | `ca4ee2a` |
+| 비공개 구현 저장소 | `Cyber-Armory` |
+| 공개 설명 저장소 | `Cyber-Armory-Portfolio` |
+| 기준 버전 | `v0.34.0-hardened` |
+| 이전 릴리스 기준 commit | `ca4ee2a` |
 | Final Release Gate | PASS |
-| Test result | 189 passed / 14 skipped / 1 warning |
-| Dependabot alerts | 0 Open |
-| Default branch | main |
-| Runtime artifacts | Excluded |
-| Public source disclosure | No source code included |
+| 테스트 | 189 passed / 14 skipped / 1 warning |
+| Dependabot | 0 Open |
+| 기본 브랜치 | main |
+| runtime artifact | 제외 |
+| 소스코드 공개 | 하지 않음 |
 
-## Security Work Completed
+`v0.34.0-hardened`에서는 release safety scan, Docker runtime preflight, Python compile validation까지 확인했습니다.
 
-- Removed runtime artifacts from the release tree
-- Excluded local data, logs, uploads, database files, backup files, and virtual environments
-- Patched vulnerable dependencies reported by Dependabot
-- Added top-level dependency security floors for Dependabot visibility
-- Patched Gunicorn request smuggling advisories
-- Validated release using an automated final release gate
-- Verified the test suite after dependency upgrades
-- Kept the implementation repository private to preserve future commercialization options
+## 실제로 정리한 부분
 
-## Architecture Summary
+- 실행 중 생기는 로그, 업로드 파일, DB, 백업, 가상환경을 릴리스 대상에서 제외
+- Dependabot에서 확인된 취약 의존성 업데이트
+- Gunicorn request smuggling 관련 advisory 반영
+- 릴리스 전 자동 점검 추가
+- 의존성 업데이트 뒤 테스트 재실행
+- Docker/Kubernetes 배포 전 확인 절차 정리
 
-| Area | Description |
+## 구성
+
+| 영역 | 내용 |
 |---|---|
-| Authentication | Login, password policy, session handling, and 2FA-related hardening |
-| Admin Management | User and role management |
-| Execution Dashboard | Controlled operational workflow interface |
-| File Management | Upload, listing, and validation workflows |
-| Security Settings | API key, 2FA, password policy, and preference security |
-| Release Gate | Automated checks for release safety |
-| Deployment Readiness | Docker and Kubernetes preflight validation |
-| Documentation | Runbooks, checklists, release notes, and handoff materials |
+| 인증 | 로그인, 비밀번호 정책, 세션, 2FA 관련 설정 |
+| 관리자 기능 | 사용자와 역할 관리 |
+| 실행 화면 | 운영 작업을 위한 대시보드 |
+| 파일 관리 | 업로드, 목록, 검증 흐름 |
+| 보안 설정 | API key, 2FA, 비밀번호 정책 등 |
+| 릴리스 점검 | 배포 전 자동 검사 |
+| 배포 준비 | Docker/Kubernetes preflight |
+| 문서 | 운영 절차, 체크리스트, 릴리스 기록 |
 
-## Disclosure Boundary
+## 공개하지 않는 내용
 
-This public repository intentionally excludes:
+이 저장소에는 아래 내용이 없습니다.
 
-- full source code
-- real deployment configuration
-- `.env` files
-- credentials, tokens, API keys, or passwords
-- internal execution logic
-- production infrastructure details
-- exploit implementation details
-- runtime data, logs, uploads, and backups
+- 전체 소스코드
+- 실제 배포 설정
+- `.env`
+- 계정정보, token, API key, 비밀번호
+- 내부 실행 로직
+- 실제 운영 인프라 정보
+- exploit 구현 세부내용
+- runtime 데이터, 로그, 업로드 파일, 백업
 
+## 화면 예시
 
-## Visual Portfolio
-
-These visuals are sanitized public mockups. They summarize validation and architecture outcomes without exposing private source code or operational details.
+아래 이미지는 실제 내부정보를 넣지 않은 공개용 예시입니다.
 
 | Validation | Dependency Security |
 |---|---|
@@ -101,47 +94,12 @@ These visuals are sanitized public mockups. They summarize validation and archit
 |---|
 | ![Architecture Overview](screenshots/05-architecture-overview.svg) |
 
-## Suggested Screenshots
+추가 화면을 공개할 경우에는 사용자명, 이메일, 내부 IP, 개인 경로, token이나 세션값 같은 정보가 남지 않았는지 먼저 확인합니다.
 
-Screenshots may be added later after sanitization:
+## 사용 범위
 
-- dashboard overview
-- user/admin management page
-- Final Release Gate PASS terminal output
-- pytest result
-- Dependabot 0 Open screen
+보안 기능과 관련 코드는 허가된 환경의 방어·점검·학습 목적으로만 사용합니다. 권한이 없는 시스템을 대상으로 사용하지 않습니다.
 
-Before publishing screenshots, remove or blur:
+## 왜 소스는 비공개인가
 
-- usernames and emails
-- internal IP addresses
-- private domains
-- file paths that reveal personal information
-- tokens, API keys, session values, and secrets
-
-## Intended Use
-
-This project is intended for authorized security testing, training, and defensive security operations only.
-
-Do not use security tools or related techniques against systems you do not own or do not have explicit permission to test.
-
-## Why the Source Code Is Private
-
-The implementation may become a commercial product.  
-Keeping the source private protects:
-
-- product architecture
-- execution workflow design
-- security hardening implementation
-- deployment strategy
-- future commercialization options
-
-This portfolio repository demonstrates the engineering process and validation discipline without exposing the implementation.
-
-
-## Private Implementation Baseline
-
-The private implementation repository has been archived as v0.34.0-hardened, with release safety scan, Docker runtime preflight, and Python compile validation completed.
-
-비공개 구현 레포는 v0.34.0-hardened 기준선으로 정리했으며, Release safety scan, Docker runtime preflight, Python compile validation을 통과했습니다.
-
+전체 구현을 공개할 필요가 없는 프로젝트라 소스는 비공개로 유지하고 있습니다. 이 저장소에서는 구현 자체보다 **어떤 보안 문제를 정리했고, 릴리스 전 어떤 검증을 했는지**만 보여줍니다.
