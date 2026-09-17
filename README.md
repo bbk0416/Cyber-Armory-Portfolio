@@ -1,7 +1,12 @@
-﻿# Cyber Armory Portfolio
+# Cyber Armory Portfolio
 
 > Documentation-only public portfolio for a private security operations platform prototype.  
 > The implementation repository is intentionally private because the project may be commercialized later.
+## Portfolio position
+
+This repository is **supporting evidence, not the primary career portfolio**. The current public entry point is [BBK Security Portfolio](https://bbk0416.github.io/bbk-security-portfolio/), which prioritizes VulnFlow, KillWeb, BreachScope, and VulnSignal for Vulnerability Management / Security Engineer roles.
+
+Cyber Armory remains useful as evidence of release hardening and security-engineering discipline, but it should not be interpreted as customer validation, production adoption, or a separate commercial product launch.
 
 ![Status](https://img.shields.io/badge/status-public--portfolio-blue)
 ![Source](https://img.shields.io/badge/source-private-lightgrey)
